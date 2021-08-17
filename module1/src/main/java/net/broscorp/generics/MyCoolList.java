@@ -46,11 +46,11 @@ public class MyCoolList<T extends Number> {
 
     if (index == 0) {
       System.arraycopy(temp, 1, list, 0, list.length);
-    } else if (index == list.length - 1) {
+    } else if (index == temp.length - 1) {
       System.arraycopy(temp, 0, list, 0, list.length);
     } else {
-      System.arraycopy(temp, 0, list, 0, index - 1);
-      System.arraycopy(temp, index + 1, list, index, list.length);
+      System.arraycopy(temp, 0, list, 0, index);
+      System.arraycopy(temp, index + 1, list, index, temp.length - index - 1);
     }
     return item;
   }
